@@ -20,18 +20,29 @@ public class UserController {
         return userService.getUserbyId(id);
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     List<User> getUsers(){
         return userService.getUsers();
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public User saveUser(@RequestBody User user){
         return userService.saveUser(user);
     }
+
+    @PostMapping("/saveAll")
+    public List<User> saveAllUsers(@RequestBody List<User> user){
+        return userService.saveAllUsers(user);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteById( @PathVariable String id){
         userService.deleteById(id);
+    }
+
+    @DeleteMapping("/deleteAll")
+    public void deleteAll(){
+        userService.deleteAll();
     }
 
 
