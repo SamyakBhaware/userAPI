@@ -21,16 +21,19 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    // getByName add karo
-      //get by age
-    // delete by name
-    // delete by age
-
     public User saveUser(User user){
        return userRepo.save(user);
     }
 
+    public List<User> saveAllUsers(List<User> user){
+       return userRepo.saveAll(user);
+    }
+
     public void deleteById(String id){
         userRepo.deleteById(id);
+    }
+
+    public void deleteAll(){
+        userRepo.deleteAll();
     }
 }
